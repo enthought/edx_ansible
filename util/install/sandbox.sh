@@ -56,7 +56,10 @@ if [ -n "$OPENEDX_RELEASE" ]; then
   CONFIG_VER=$OPENEDX_RELEASE
 else
   CONFIG_VER="master"
+  EXTRA_VARS=""
 fi
+
+EXTRA_VARS="$EXTRA_VARS -e@/edx/app/edx_ansible/server-vars.yml"
 
 ##
 ## Clone the configuration repository and run Ansible
